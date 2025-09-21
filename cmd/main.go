@@ -1,11 +1,12 @@
+
 package main
 
 import (
     "log"
     "net/http"
-    "recy/internal/handlers"
-    "recy/pkg/config"
-    "recy/pkg/middleware"
+    "recy-app/internal/handlers"
+    "recy-app/pkg/config"
+    "recy-app/pkg/middleware"
 )
 
 func main() {

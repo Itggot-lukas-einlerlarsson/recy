@@ -1,8 +1,9 @@
+
 package handlers
 
 import (
     "net/http"
-    "recy/internal/services"
+    services "recy-app/internal/service"
 )
 
 var (

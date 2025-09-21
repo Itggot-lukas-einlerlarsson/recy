@@ -1,9 +1,5 @@
 package config
 
-import (
-    "os"
-)
-
 type Config struct {
     ServerAddress string
     // Add other configuration fields
