@@ -8,14 +8,23 @@ import (
 	"trash-pickup-app/internal/handlers"
 )
 
+
+func servePickupForm(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+	http.ServeFile(w, r, "static/pickup_form.html")
+}
+
 func SetupRoutes(db *sql.DB) http.Handler {
 	r := chi.NewRouter()
 
 	handler := &handlers.PickupHandler{DB: db}
 
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("🚛 Trash Pickup API Running"))
-	})
+	r.Get("/", servePickupForm)
+
+	
 
 	
 	r.Get("/form", func(w http.ResponseWriter, r *http.Request) {
@@ -34,3 +43,4 @@ func SetupRoutes(db *sql.DB) http.Handler {
 
 	return r
 }
+

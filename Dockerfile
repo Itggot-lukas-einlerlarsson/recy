@@ -19,6 +19,7 @@ WORKDIR /app
 COPY --from=builder /app/server .
 COPY .env .
 
+COPY static/ ./static/
 EXPOSE 8080
 
 CMD ["./server"]

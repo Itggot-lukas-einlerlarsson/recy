@@ -13,15 +13,17 @@ type PickupHandler struct {
 }
 
 
-func (h *PickupHandler) CreatePickup(w http.ResponseWriter, r *http.Request) {
-    r.ParseForm()
-    pickup := models.Pickup{
-        Name: r.FormValue("name"),
-        Address: r.FormValue("address"),
-        PickupTime: r.FormValue("pickup_time"),
-    }
-    // ... rest of DB insertion logic
-}
+// func (h *PickupHandler) CreatePickup(w http.ResponseWriter, r *http.Request) {
+//     r.ParseForm()
+//     pickup := models.Pickup{
+//         Name: r.FormValue("name"),
+//         Address: r.FormValue("address"),
+//         PickupTime: r.FormValue("pickup_time"),
+//     }
+
+    
+//     // ... rest of DB insertion logic
+// }
 func (h *PickupHandler) CreatePickup(w http.ResponseWriter, r *http.Request) {
 	var pickup models.Pickup
 
